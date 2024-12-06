@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package server.clienthandshake.v1;
+
+import "server/clienthandshake/v1/login_request.proto";
+
+option cc_enable_arenas = true;
+option csharp_namespace = "Server.ClientHandshake.V1";
+
+message Message {
+  oneof payload {
+    LoginRequest login_request = 1;
+  }
+}
